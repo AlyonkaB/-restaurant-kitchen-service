@@ -6,8 +6,9 @@ from kitchen.models import DishType, Dish, Cook, Ingredient
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
+    list_display = ["name", "dish_type", "price"]
     search_fields = ["name"]
-    list_filter = ["name", "price"]
+    list_filter = ["name", "dish_type"]
 
 
 @admin.register(Cook)
@@ -25,6 +26,7 @@ class CookAdmin(UserAdmin):
             "first_name",
             "last_name",
             "years_for_experience",
+            "email",
         )}),
     )
 
