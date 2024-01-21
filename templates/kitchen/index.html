@@ -1,2 +1,43 @@
 {% extends 'base.html' %}
+ {% load static %}
 
+{% block content %}
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col mb-4">
+      <div class="card">
+        <img src= "{% static 'kitchen/image_cooks_nav.jpg' %}"  class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Cooks</h5>
+          <p class="card-text"> Here you will get acquainted with a list of famous chefs who have their own delicious recipes.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="{% static 'kitchen/image_dishes_nav.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Dishes</h5>
+          <p class="card-text">Here you will find a list of the most delicious dishes from our chefs.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="{% static 'kitchen/image_ензу_dishes_nav.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Dish Type</h5>
+          <p class="card-text">The most popular types of dishes around the world.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col mb-4">
+      <div class="card">
+        <img src="{% static 'kitchen/image_engridients_nav.jpg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ingedients</h5>
+          <p class="card-text">A list of the freshest ingredients from which our dishes are prepared.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
