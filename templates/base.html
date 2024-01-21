@@ -18,39 +18,20 @@
 <div class="container-fluid">
   <div class="row">
     <div>
-
       {% block sidebar %}
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link" href="#">НОМE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">List Cooks</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">List Dish</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Dish Type</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Ingredient</a>
-          </li>
-        </ul>
+        {% include "includes/sidebar.html" %}
       {% endblock %}
     </div>
-    <div>
+
+    <div class="content">
       {% block content %}
-        content
       {% endblock %}
 
       {% block pagination %}
-        pagination
       {% endblock %}
     </div>
-    <div class="fixed-bottom">
+    <div class="footer">
       {% block footer %}
-        footer
       {% endblock %}
     </div>
   </div>
