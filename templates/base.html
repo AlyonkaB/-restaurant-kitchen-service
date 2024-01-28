@@ -11,7 +11,7 @@
         crossorigin="anonymous">
   <!-- Add additional CSS in static file -->
   {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/kitchen/styles.css' %}">
 </head>
 
 <body>
@@ -23,21 +23,25 @@
     {% endblock %}
   </div>
 
-  <div class="content">
-    {% block content %}
-    {% endblock %}
-
+  <main class="content_list">
+    <div class="content" >
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="paginator">
     {% block pagination %}
       {% include "includes/pagination.html" %}
     {% endblock %}
-  </div>
+    </div>
+  </main>
 
   <div class="footer">
     {% block footer %}
       {% include "includes/footer.html" %}
     {% endblock %}
   </div>
-</div>
+</main>
+
 </body>
 
 </html>

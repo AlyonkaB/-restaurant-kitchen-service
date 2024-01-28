@@ -1,0 +1,55 @@
+@font-face {
+    font-family: Gagalin;
+    src: url(fonts/Gagalin.ttf);
+}
+body {
+    background-color: black;
+}
+
+body main  {
+    background-image: url(images/image_cook_list_backgraud.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+a {
+    color: black;
+}
+
+a:hover {
+    color: darkslategrey;
+}
+
+.nav-item {
+    margin: 5px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Gagalin", serif;
+    font-size: 50px;
+}
+
+.btn btn-dark {
+    font-family: "Arial Black", serif;
+    font-size: 15px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-family: "Arial Black", serif;
+}
+
+.card-text {
+    font-family: Arial, sans-serif
+}
+
+.content-index {
+    background-color: black;
+}
+
+.content-cook-list{
+    text-align: center;
+    color: gray;
+}
