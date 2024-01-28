@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+    {% for cook in cook_list %}
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <h2><a href="#" style="color: black" >{{ cook.first_name }} {{ cook.last_name }}</a></h2>
+          <p>Username: {{ cook.username }} Email: {{ cook.email }}</p>
+          <p>Year for experience : {{ cook.years_for_experience }}</p>
+        </li>
+      </ul>
+    {% endfor %}
+  </div>
+{% endblock %}

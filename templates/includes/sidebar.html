@@ -1,19 +1,21 @@
 {% block sidebar %}
-        <ul class="nav justify-content-end">
+        <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a class="btn btn-outline-dark" href="#">Нome</a>
+            <a class="btn btn-dark" href={% url 'kitchen:index' %}>Нome</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="btn btn-dark" href={% url 'kitchen:cook-list' %}>List Cooks</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="btn btn-dark" href="#">List Dish</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-outline-dark" href="#">List Cooks</a>
+            <a class="btn btn-dark" href="#">Dish Type</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-outline-dark" href="#">List Dish</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-dark" href="#">Dish Type</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-outline-dark" href="#">Ingredient</a>
+            <a class="btn btn-dark" href="#">Ingredient</a>
           </li>
         </ul>
-      {% endblock %}
+{% endblock %}
