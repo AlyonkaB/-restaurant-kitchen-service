@@ -1,5 +1,7 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.views import generic
 
 from kitchen.models import Cook, Dish, DishType, Ingredient
 
@@ -16,3 +18,10 @@ def index(request: HttpRequest) -> HttpResponse:
         "ingredient": ingredient
     }
     return render(request, "kitchen/index.html", context=context)
+
+
+class CookListView(generic.ListView):
+    model = Cook
+    context_object_name = "cook_list"
+    template_name = "kitchen/cook_list.html"
+    paginate_by = 3
