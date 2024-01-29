@@ -51,5 +51,11 @@ a:hover {
 
 .content-cook-list{
     text-align: center;
-    color: gray;
+    color: black;
+    height: 85vh;
+}
+.content-dish-list{
+    text-align: center;
+    color: black;
+    height: 85vh;
 }
