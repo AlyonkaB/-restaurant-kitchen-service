@@ -11,21 +11,22 @@
         <div class="card">
           <a href={% url 'kitchen:cook-list' %}>
             <img src= "{% static 'css/kitchen/images/image_cooks_nav.jpg' %}" class="card-img-top" alt="...">
-
             <div class="card-body">
               <h5 class="card-title" >Cooks</h5>
               <p class="card-text"> Here is a list of famous chefs who have their own delicious recipes.</p>
             </div>
           </a>
-          </div>
+        </div>
       </div>
       <div class="col mb-4">
         <div class="card">
-          <img src="{% static 'css/kitchen/images/image_dishes_nav.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Dishes</h5>
-            <p class="card-text">Here you will find a list of the most delicious dishes from our chefs.</p>
-          </div>
+          <a href={% url 'kitchen:dish-list' %}>
+            <img src="{% static 'css/kitchen/images/image_dishes_nav.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Dishes</h5>
+              <p class="card-text">Here you will find a list of the most delicious dishes from our chefs.</p>
+            </div>
+          </a>
         </div>
       </div>
       <div class="col mb-4">
