@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="content-list">
+    {% for type in dish_type_list %}
+      <ul class="list-group">
+        <li class="list-group">
+          <h2><a href="#" style="color: white" >{{ type.name }}</a></h2>
+        </li>
+      </ul>
+    {% endfor %}
+  </div>
+{% endblock %}
