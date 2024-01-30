@@ -1,21 +1,21 @@
 {% block sidebar %}
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a class="btn btn-dark" href={% url 'kitchen:index' %}>Нome</a>
+            <a class="btn btn-dark btn-lg" href={% url 'kitchen:index' %}>Нome</a>
           </li>
 
           <li class="nav-item">
-            <a class="btn btn-dark" href={% url 'kitchen:cook-list' %}>Cooks</a>
+            <a class="btn btn-dark btn-lg" href={% url 'kitchen:cook-list' %}>Cooks</a>
           </li>
 
           <li class="nav-item">
-            <a class="btn btn-dark" href={% url 'kitchen:dish-list' %}>Dishes</a>
+            <a class="btn btn-dark btn-lg" href={% url 'kitchen:dish-list' %}>Dishes</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-dark" href="#">Dish Type</a>
+            <a class="btn btn-dark btn-lg" href={% url 'kitchen:dish-type-list' %}>Dish Types</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-dark" href="#">Ingredient</a>
+            <a class="btn btn-dark btn-lg" href="#">Ingredient</a>
           </li>
         </ul>
 {% endblock %}
