@@ -39,4 +39,4 @@ class DishTypeListView(generic.ListView):
     model = DishType
     context_object_name = "dish_type_list"
     template_name = "kitchen/dish_type_list.html"
-    paginate_by = 5
+    paginate_by = 15
