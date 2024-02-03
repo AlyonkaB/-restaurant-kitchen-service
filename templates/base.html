@@ -24,14 +24,13 @@
   </div>
 
   <main class="content_list">
-    <div class="content" >
+    <div class="content">
       {% block content %}
       {% endblock %}
-    </div>
-    <div class="paginator">
-    {% block pagination %}
-      {% include "includes/pagination.html" %}
-    {% endblock %}
+
+      {% block pagination %}
+        {% include "includes/pagination.html" %}
+      {% endblock %}
     </div>
   </main>
 

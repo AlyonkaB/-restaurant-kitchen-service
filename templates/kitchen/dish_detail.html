@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+  <div class="content-detail">
+
+    <div class="title">
+      <h1> {{ dish.name}}  </h1>
+      <h4> Type: {{ dish.dish_type }}</h4>
+    </div>
+
+    {% if dish.description %}
+      <h4>Description :</h4>
+      <p> {{ dish.description }}</p>
+    {% endif %}
+    {% if dish.cooks.all %}
+      <h4>List of authors of dishes:</h4>
+      {% for cook in dish.cooks.all %}
+        <ul class="list-group">
+          <li class="list-group">
+            <p> {{ cook.username }} </p>
+          </li>
+        </ul>
+      {% endfor %}
+    {% endif %}
+
+  </div>
+
+{% endblock %}

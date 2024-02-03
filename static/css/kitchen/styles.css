@@ -2,15 +2,15 @@
     font-family: Gagalin;
     src: url(fonts/Gagalin.ttf);
 }
+@font-face {
+    font-family: Gunnyrewritten;
+    src: url(fonts/gunnyrewritten.ttf);
+}
+
 body {
     background-color: black;
 }
 
-body main  {
-    background-image: url(images/image_cook_list_backgraud.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
 a {
     color: black;
 }
@@ -31,7 +31,7 @@ a:hover {
     font-size: 50px;
 }
 
-.btn btn-dark {
+.btn {
     font-family: "Arial Black", serif;
     font-size: 15px;
 }
@@ -45,13 +45,23 @@ a:hover {
     font-family: Arial, sans-serif
 }
 
-.content-index {
-    background-color: black;
-}
-
 .content-list{
+    background-image: url(images/image_list_backgraund.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    margin: 20px 20px;
     text-align: center;
     color: black;
-    height: 65vh;
+    height: 100vh;
+    font-family: Gunnyrewritten;
+
+
+}
+
+.content-detail{
+    text-align: center;
+    color: white;
+    height: 100vh;
 }
 

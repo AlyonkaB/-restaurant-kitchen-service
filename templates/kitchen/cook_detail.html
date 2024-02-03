@@ -1,28 +1,32 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+
   <div class="content-detail">
+
     <div class="title">
       <h1> {{ cook.first_name}} {{ cook.last_name }} </h1>
-      <h3> User name: {{ cook.username }}</h3>
+      <h4> User name: {{ cook.username }}</h4>
     </div>
-    <div class="content-list">
-      {% if cook.email  %}
-        <p> Email: {{ cook.email }}</p>
-      {% endif %}
-      {% if cook.years_for_experience %}
-        <p>Year for experience : {{ cook.years_for_experience }}</p>
-      {% endif %}
-      {% if cook.dishes.all %}
-        <h4>List of dishes from the chef:</h4>
-        {% for dish in cook.dishes.all %}
-          <ul class="list-group">
-            <li class="list-group">
-              <p> {{ dish.name }} </p>
-            </li>
-          </ul>
-        {% endfor %}
-      {% endif %}
-    </div>
+
+    {% if cook.email  %}
+      <p> Email: {{ cook.email }}</p>
+    {% endif %}
+    {% if cook.years_for_experience %}
+      <p>Year for experience : {{ cook.years_for_experience }}</p>
+    {% endif %}
+    {% if cook.dishes.all %}
+      <h4>List of dishes from the chef:</h4>
+      {% for dish in cook.dishes.all %}
+        <ul class="list-group">
+          <li class="list-group">
+            <p> {{ dish.name }} </p>
+          </li>
+        </ul>
+      {% endfor %}
+    {% endif %}
+
   </div>
+
 {% endblock %}

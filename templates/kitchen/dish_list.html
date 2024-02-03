@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
   <div class="content-list">
+
     <div class="title">
       <h1> List dishes </h1>
     </div>
+
     {% for dish in dish_list %}
       <ul class="list-group">
         <li class="list-group">
-          <h2><a href="#" style="color: white" >{{ dish.name }} ({{ dish.dish_type.name }})</a></h2>
+          <h2><a href={% url 'kitchen:dish-detail' dish.id %} style="color: white" >{{ dish.name }} ({{ dish.dish_type.name }})</a></h2>
           <p> Price - {{ dish.price }}</p>
         </li>
       </ul>
     {% endfor %}
+
   </div>
+
 {% endblock %}

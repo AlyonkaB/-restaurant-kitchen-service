@@ -1,17 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block content %}
+
   <div class="content-list">
+
     <div class="title">
-      <h1> List cooks </h1>
+    <h1> List cooks </h1>
     </div>
+
     {% for cook in cook_list %}
       <ul class="list-group">
         <li class="list-group">
-          <h2><a href={% url 'kitchen:cook-detail' cook.id %} style="color: white" >{{ cook.first_name }} {{ cook.last_name }}</a></h2>
-          <p> {{ cook.username }}</p>
+          <h2>
+            <a href={% url 'kitchen:cook-detail' cook.id %} style="color:white"> {{ cook.first_name }} {{ cook.last_name }} </a>
+          </h2>
         </li>
       </ul>
     {% endfor %}
+
   </div>
+
 {% endblock %}
