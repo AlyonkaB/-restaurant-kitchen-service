@@ -8,14 +8,8 @@
     {% for cook in cook_list %}
       <ul class="list-group">
         <li class="list-group">
-          <h2><a href="#" style="color: white" >{{ cook.first_name }} {{ cook.last_name }}</a></h2>
+          <h2><a href={% url 'kitchen:cook-detail' cook.id %} style="color: white" >{{ cook.first_name }} {{ cook.last_name }}</a></h2>
           <p> {{ cook.username }}</p>
-          {% if cook.email  %}
-            <p> Email: {{ cook.email }}</p>
-          {% endif %}
-          {% if cook.years_for_experience %}
-            <p>Year for experience : {{ cook.years_for_experience }}</p>
-          {% endif %}
         </li>
       </ul>
     {% endfor %}
