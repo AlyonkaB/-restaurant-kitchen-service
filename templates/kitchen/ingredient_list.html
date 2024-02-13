@@ -18,6 +18,7 @@
           <h2 style="color: white">
             {{ ingredient.name }}
             <a href="{% url 'kitchen:ingredient-update' pk=ingredient.id %}">Update</a>
+            <a style="color: red" href="{% url 'kitchen:ingredient-delete' pk=ingredient.id %}">Delete</a>
           </h2>
         </li>
       </ul>
