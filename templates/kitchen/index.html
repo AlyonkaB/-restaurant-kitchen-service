@@ -45,11 +45,13 @@
       </div>
       <div class="col mb-4">
         <div class="card">
-          <img src="{% static 'css/kitchen/images/image_engridients_nav.jpg' %}" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Ingedients</h5>
-            <p class="card-text">A list of the freshest ingredients from which our dishes are prepared.</p>
-          </div>
+          <a href={% url 'kitchen:ingredient-list' %}>
+            <img src="{% static 'css/kitchen/images/image_engridients_nav.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Ingedients</h5>
+              <p class="card-text">A list of the freshest ingredients from which our dishes are prepared.</p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
