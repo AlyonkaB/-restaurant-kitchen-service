@@ -12,11 +12,13 @@
       <h1> List dish types </h1>
     </div>
 
-
     {% for ingredient in ingredient_list %}
       <ul class="list-group">
         <li class="list-group">
-          <h2><a href="#" style="color: white" >{{ ingredient.name }}</a></h2>
+          <h2 style="color: white">
+            {{ ingredient.name }}
+            <a href="{% url 'kitchen:ingredient-update' pk=ingredient.id %}">Update</a>
+          </h2>
         </li>
       </ul>
     {% endfor %}
