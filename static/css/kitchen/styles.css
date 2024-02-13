@@ -26,9 +26,10 @@ a:hover {
 .title {
     color: white;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: "Gagalin", serif;
     font-size: 50px;
+
 }
 
 .btn {
@@ -55,11 +56,15 @@ a:hover {
     color: black;
     height: 100vh;
     font-family: Gunnyrewritten;
-
-
 }
 
 .content-detail{
+    text-align: center;
+    color: white;
+    height: 100vh;
+}
+
+.content-created{
     text-align: center;
     color: white;
     height: 100vh;

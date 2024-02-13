@@ -3,10 +3,15 @@
 {% block content %}
 
   <div class="content-list">
-
+    <div style="float: left">
+      <a href="{% url 'kitchen:ingredient-create' %}" class="btn btn-light">
+      ➕
+      </a>
+    </div>
     <div class="title">
       <h1> List dish types </h1>
     </div>
+
 
     {% for ingredient in ingredient_list %}
       <ul class="list-group">
