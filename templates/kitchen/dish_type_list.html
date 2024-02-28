@@ -3,7 +3,11 @@
 {% block content %}
 
   <div class="content-list">
-
+    <div style="float: left">
+      <a href="{% url 'kitchen:dishes-type-create' %}" class="btn btn-light">
+      ➕
+      </a>
+    </div>
     <div class="title">
       <h1> List dish types </h1>
     </div>
@@ -11,7 +15,11 @@
     {% for type in dish_type_list %}
       <ul class="list-group">
         <li class="list-group">
-          <h2><a href="#" style="color: white" >{{ type.name }}</a></h2>
+          <h2 style="color: white">
+            {{ type.name }}
+            <a href="{% url 'kitchen:dishes-type-update' pk=type.id %}">Update</a>
+            <a style="color: red" href="{% url 'kitchen:dishes-type-delete' pk=type.id %}">Delete</a>
+          </h2>
         </li>
       </ul>
     {% endfor %}
