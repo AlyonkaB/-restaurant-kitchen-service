@@ -22,11 +22,18 @@ class DishCreateForm(forms.ModelForm):
         model = Dish
         fields = "__all__"
 
+class CookUpdateForm(forms.ModelForm):
+    class Meta:
+        model =  Cook
+        fields = ("username", "email", "first_name", "last_name", "years_for_experience")
+
+    def clean_years_for_experience(self):
+        return validate_years_for_experience(self.cleaned_data["years_for_experience"])
 
 class CookCreationForm(UserCreationForm):
     class Meta:
         model = Cook
-        fields = UserCreationForm.Meta.fields + ("first_name", "last_name", "years_for_experience")
+        fields = UserCreationForm.Meta.fields + ("email","first_name", "last_name", "years_for_experience")
 
     def clean_years_for_experience(self):
         return validate_years_for_experience(self.cleaned_data["years_for_experience"])
