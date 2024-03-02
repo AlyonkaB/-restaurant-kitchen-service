@@ -34,8 +34,6 @@ class CookCreationForm(UserCreationForm):
 
 def validate_years_for_experience(
     years_for_experience):
-    if not years_for_experience.isdigit():
-        raise ValidationError("The field can only contain numbers")
-    elif not 0 < years_for_experience < 100:
+    if not 0 < years_for_experience < 100:
         raise ValidationError("The value of years of experience cannot be more than 100, and be less than 0")
     return years_for_experience
