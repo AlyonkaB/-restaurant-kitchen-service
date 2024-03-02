@@ -44,3 +44,16 @@ def validate_years_for_experience(
     if not 0 < years_for_experience < 100:
         raise ValidationError("The value of years of experience cannot be more than 100, and be less than 0")
     return years_for_experience
+
+
+class SearchDishForm(forms.Form):
+    name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search by username"
+            }
+        )
+    )
