@@ -5,7 +5,12 @@
 {% block content %}
 
   <div class="content-detail">
-
+    <div style="float: left">
+      <h2>
+        <a style="color: white" href="{% url 'kitchen:dishes-update' pk=dish.id %}">Update</a>
+        <a style="color: red" href="{% url 'kitchen:dishes-delete' pk=dish.id %}">Delete</a>
+      </h2>
+   </div>
     <div class="title">
       <h1> {{ dish.name}}  </h1>
       <h4> Type: {{ dish.dish_type }}</h4>

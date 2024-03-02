@@ -3,7 +3,11 @@
 {% block content %}
 
   <div class="content-list">
-
+    <div style="float: left">
+      <a href="{% url 'kitchen:dishes-create' %}" class="btn btn-light">
+      ➕
+      </a>
+    </div>
     <div class="title">
       <h1> List dishes </h1>
     </div>
