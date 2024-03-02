@@ -46,8 +46,20 @@ def validate_years_for_experience(
     return years_for_experience
 
 
-class SearchDishForm(forms.Form):
+class SearchDishIngredientDishTypeForm(forms.Form):
     name = forms.CharField(
+        max_length=255,
+        required=False,
+        label="",
+        widget=forms.TextInput(
+            attrs={
+                "placeholder": "Search by name"
+            }
+        )
+    )
+
+class SearchCookForm(forms.Form):
+   username = forms.CharField(
         max_length=255,
         required=False,
         label="",
