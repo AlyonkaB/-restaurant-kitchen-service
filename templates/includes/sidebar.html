@@ -1,40 +1,33 @@
 {% block sidebar %}
-  <ul class="nav justify-content-center">
-    <div>
-      {% if user.is_authenticated %}
-        <li class="nav-item">
-          <p class="user-name">User: {{ user.username }}</p>
-          <form  method="post" action="{% url 'logout' %}">
-            {% csrf_token %}
-            <button class="btn btn-dark btn-lg" type="submit">logout</button>
-          </form>
-        </li>
-      {% else %}
-        <li class="nav-item">
-          <a class="btn btn-dark btn-lg" href="{% url 'login' %}">Login</a>
-        </li>
-      {% endif %}
-
-    </div>
-
-    <li class="nav-item">
+  <ul class="nav bg-info clearfix">
+    <li class="nav-item float-left">
       <a class="btn btn-dark btn-lg" href={% url 'kitchen:index' %}>Нome</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item float-left">
       <a class="btn btn-dark btn-lg" href={% url 'kitchen:cook-list' %}>Cooks</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item float-left">
       <a class="btn btn-dark btn-lg" href={% url 'kitchen:dish-list' %}>Dishes</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item float-left">
       <a class="btn btn-dark btn-lg" href={% url 'kitchen:dish-type-list' %}>Dish Types</a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item float-left">
       <a class="btn btn-dark btn-lg" href={% url 'kitchen:ingredient-list' %}>Ingredient</a>
     </li>
-        </ul>
+      {% if user.is_authenticated %}
+        <p class="username float-right"> User: {{ user.username }}</p>
+        <form method="post" action="{% url 'logout' %}">
+          {% csrf_token %}
+          <button class="nav-item btn btn-dark btn-lg float-right" type="submit">logout</button>
+        </form>
+      {% else %}
+        <a class="nav-item btn btn-dark btn-lg float-right" href="{% url 'login' %}">Login</a>
+      {% endif %}
+
+  </ul>
 {% endblock %}
