@@ -5,32 +5,48 @@
 {% block content %}
 
   <div class="content-list">
-    <div style="float: left">
-      <a href="{% url 'kitchen:cook-create' %}" class="btn btn-light">
-      ➕
-      </a>
-    </div>
+     <div>
+        <div style="float: left">
+          <a href="{% url 'kitchen:cook-create' %}" class="btn btn-light">
+            ➕
+          </a>
+        </div>
 
-    <div>
-      <form method="get" action="" class="form-inline">
-        {{ search_form }}
-        <input class="btn-btn-secondary" type="submit" value="🔎">
-      </form>
+        <div style="float: right">
+          <form method="get" action="" class="form-inline">
+            {{ search_form }}
+            <input class="btn-btn-secondary" type="submit" value="🔎">
+          </form>
+        </div>
     </div>
-
     <div class="title">
     <h1> List cooks </h1>
     </div>
-
-    {% for cook in cook_list %}
-      <ul class="list-group">
-        <li class="list-group">
-          <h2>
+    <table class="table">
+      <tr style="color: brown">
+        <th>Name</th>
+        <th>Login</th>
+        <th>Email</th>
+      </tr>
+      {% for cook in cook_list %}
+        <tr style="color:darkolivegreen">
+          <td>
             <a href={% url 'kitchen:cook-detail' cook.id %} style="color:white"> {{ cook.first_name }} {{ cook.last_name }} </a>
-          </h2>
-        </li>
-      </ul>
-    {% endfor %}
+          </td>
+          <td>{{ cook.username }}</td>
+          <td>{{ cook.email }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+{#    {% for cook in cook_list %}#}
+{#      <ul class="list-group">#}
+{#        <li class="list-group">#}
+{#          <h2>#}
+{#            <a href={% url 'kitchen:cook-detail' cook.id %} style="color:white"> {{ cook.first_name }} {{ cook.last_name }} </a>#}
+{#          </h2>#}
+{#        </li>#}
+{#      </ul>#}
+{#    {% endfor %}#}
 
   </div>
 
