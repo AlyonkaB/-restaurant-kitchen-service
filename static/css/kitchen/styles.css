@@ -82,18 +82,19 @@ a:hover {
 }
 
 .login{
-    margin: 60px auto;
-    background-color: darkolivegreen;
+    margin: 50px auto;
+    background-color: rgba(85, 107, 47, 0.27);
     width:360px;
     height:350px;
     padding: 35px;
     border: 5px;
     border-radius: 10px;
-    font-weight: bolder;
-    color: #b21414;
-    text-align: center;
     line-height: 30px;
-
+    font-weight: bolder;
+    font-family: Gunnyrewritten;
+    font-size: 27px;
+    color:  brown;
+    text-align: center;
 }
 
 .username{
