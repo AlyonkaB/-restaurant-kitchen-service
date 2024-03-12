@@ -8,30 +8,41 @@
 }
 
 body {
-    background-color: black;
+    background-image: url(images/image_list_backgraund.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 a {
-    color: black;
+    color: dimgrey;
 }
 
 a:hover {
-    color: darkslategrey;
+    color: black;
+}
+
+.upd_url{
+    color: darkolivegreen;
+}
+
+.del_url{
+    color: gray;
 }
 
 .nav-item {
     margin: 10px;
 }
+
 .nav{
     display: inline;
 }
+
 .title {
-    color: white;
+    color: brown;
     text-align: center;
     margin-bottom: 10px;
     font-family: "Gagalin", serif;
-    font-size: 50px;
-
+    font-size: 60px;
 }
 
 .btn {
@@ -49,15 +60,14 @@ a:hover {
 }
 
 .content-list{
-    background-image: url(images/image_list_backgraund.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 20px;
-    margin: 20px 20px;
+    padding: 30px;
+    margin: 30px 30px;
     text-align: center;
-    color: black;
-    height: 100vh;
+    height: 100%;
     font-family: Gunnyrewritten;
+    font-size: 30px;
 }
 
 .content-detail{
@@ -71,21 +81,26 @@ a:hover {
     color: white;
     height: 100vh;
 }
+
 .login{
-    background-color: gray;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -150px 0 0 -150px;
-    width:300px;
-    height:300px;
+    margin: 60px auto;
+    background-color: darkolivegreen;
+    width:360px;
+    height:350px;
+    padding: 35px;
+    border: 5px;
+    border-radius: 10px;
+    font-weight: bolder;
+    color: #b21414;
+    text-align: center;
+    line-height: 30px;
+
 }
 
 .username{
-    color: red;
+    font-family: "Gagalin", serif;
+    color: brown;
     text-transform: uppercase;
     font-size: 15px;
     margin-top: 20px;
-    font-weight: bolder;
 }
-
