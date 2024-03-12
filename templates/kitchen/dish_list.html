@@ -3,31 +3,51 @@
 {% block content %}
 
   <div class="content-list">
-    <div style="float: left">
-      <a href="{% url 'kitchen:dishes-create' %}" class="btn btn-light">
-      ➕
-      </a>
+    <div>
+      <div style="float: left">
+        <a href="{% url 'kitchen:dishes-create' %}" class="btn btn-light">
+          ➕
+        </a>
+      </div>
+
+      <div style="float: right">
+        <form method="get" action="" class="form-inline">
+          {{ search_form }}
+          <input class="btn-btn-secondary" type="submit" value="🔎">
+        </form>
+      </div>
     </div>
 
-    <div>
-      <form method="get" action="" class="form-inline">
-        {{ search_form }}
-        <input class="btn-btn-secondary" type="submit" value="🔎">
-      </form>
-    </div>
     <div class="title">
       <h1> List dishes </h1>
     </div>
+    <table class="table">
+      <tr style="color: brown">
+        <th>Name</th>
+        <th>Dish type</th>
+        <th>Ingredients</th>
+        <th>Prise</th>
+      </tr>
+      {% for dish in dish_list %}
+        <tr style="color:darkolivegreen">
+          <td>
+            <a href={% url 'kitchen:dish-detail' dish.id %} style="color:white"> {{ dish.name }} </a>
+          </td>
+          <td>
+            {{ dish.dish_type.name }}
+          </td>
+          <td>
+            {% for ingredient in dish.ingredients.all %}
+              {{ ingredient.name }},
+            {% endfor %}  
+          </td>
+          <td>
+            {{ dish.price }}
+          </td>
+        </tr>
 
-    {% for dish in dish_list %}
-      <ul class="list-group">
-        <li class="list-group">
-          <h2><a href={% url 'kitchen:dish-detail' dish.id %} style="color: white" >{{ dish.name }} ({{ dish.dish_type.name }})</a></h2>
-          <p> Price - {{ dish.price }}</p>
-        </li>
-      </ul>
-    {% endfor %}
-
+      {% endfor %}
+    </table>
   </div>
 
 {% endblock %}
