@@ -3,33 +3,45 @@
 {% block content %}
 
   <div class="content-list">
-    <div style="float: left">
-      <a href="{% url 'kitchen:dishes-type-create' %}" class="btn btn-light">
-      ➕
-      </a>
-    </div>
     <div>
-      <form method="get" action="" class="form-inline">
-        {{ search_form }}
-        <input class="btn-btn-secondary" type="submit" value="🔎">
-      </form>
+      <div style="float: left">
+        <a href="{% url 'kitchen:dishes-type-create' %}" class="btn btn-light">
+          ➕
+        </a>
+      </div>
+
+      <div style="float: right">
+        <form method="get" action="" class="form-inline">
+          {{ search_form }}
+          <input class="btn-btn-secondary" type="submit" value="🔎">
+        </form>
+      </div>
     </div>
+
     <div class="title">
       <h1> List dish types </h1>
     </div>
 
-    {% for type in dish_type_list %}
-      <ul class="list-group">
-        <li class="list-group">
-          <h2 style="color: white">
+    <table class="table">
+      <tr style="color: brown">
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      {% for type in dish_type_list %}
+        <tr style="color:darkolivegreen">
+          <td style="color: white">
             {{ type.name }}
-            <a href="{% url 'kitchen:dishes-type-update' pk=type.id %}">Update</a>
-            <a style="color: red" href="{% url 'kitchen:dishes-type-delete' pk=type.id %}">Delete</a>
-          </h2>
-        </li>
-      </ul>
-    {% endfor %}
-
+          </td>
+          <td>
+            <a class="upd_url" href="{% url 'kitchen:dishes-type-update' pk=type.id %}">Update</a>
+          </td>
+          <td>
+            <a class="del_url" href="{% url 'kitchen:dishes-type-delete' pk=type.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
   </div>
 
 {% endblock %}
