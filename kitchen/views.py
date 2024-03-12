@@ -74,7 +74,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
     context_object_name = "dish_type_list"
     template_name = "kitchen/dish_type_list.html"
-    paginate_by = 15
+    paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(DishTypeListView, self).get_context_data(**kwargs)
@@ -93,7 +93,7 @@ class IngredientListView(LoginRequiredMixin, generic.ListView):
     model = Ingredient
     context_object_name = "ingredient_list"
     template_name = "kitchen/ingredient_list.html"
-    paginate_by = 12
+    paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(IngredientListView, self).get_context_data(**kwargs)
