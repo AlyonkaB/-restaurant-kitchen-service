@@ -5,15 +5,15 @@
   <div class="content-list">
     <div>
       <div style="float: left">
-        <a href="{% url 'kitchen:dishes-type-create' %}" class="btn btn-light">
+        <a href="{% url 'kitchen:dishes-type-create' %}" class="btn btn-outline-light">
           ➕
         </a>
       </div>
 
       <div style="float: right">
-        <form method="get" action="" class="form-inline">
+        <form method="get" action="" style="font-size: 20px" class="form-inline">
           {{ search_form }}
-          <input class="btn-btn-secondary" type="submit" value="🔎">
+          <input class="btn btn-outline-light" type="submit" value="🔎">
         </form>
       </div>
     </div>
