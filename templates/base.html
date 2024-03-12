@@ -15,15 +15,14 @@
 </head>
 
 <body>
-<div class="container-fluid">
 
-  <div class="sidebar">
+  <nav class="sidebar">
     {% block sidebar %}
       {% include "includes/sidebar.html" %}
     {% endblock %}
-  </div>
+  </nav>
 
-  <main class="content_list">
+  <main>
     <div class="content">
       {% block content %}
       {% endblock %}
@@ -34,13 +33,10 @@
     </div>
   </main>
 
-  <div class="footer">
+  <footer class="footer">
     {% block footer %}
       {% include "includes/footer.html" %}
     {% endblock %}
-  </div>
-</main>
-
+  </footer>
 </body>
-
 </html>
