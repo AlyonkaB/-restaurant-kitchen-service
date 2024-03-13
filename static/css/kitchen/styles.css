@@ -72,7 +72,8 @@ a:hover {
 .content-detail{
     text-align: center;
     color: white;
-    height: 100vh;
+    height: 100%;
+    padding: 30px 150px 30px 150px;
 }
 
 .content-created{

@@ -5,32 +5,33 @@
 {% block content %}
 
   <div class="content-detail">
-    <div style="float: left">
-      <h2>
-        <a style="color: white" href="{% url 'kitchen:dishes-update' pk=dish.id %}">Update</a>
-        <a style="color: red" href="{% url 'kitchen:dishes-delete' pk=dish.id %}">Delete</a>
-      </h2>
-   </div>
+    <div>
+      <div style="float: left">
+        <a class="upd_url btn btn-outline-light" href="{% url 'kitchen:dishes-update' pk=dish.id %}">Update</a>
+      </div>
+
+      <div style="float: right">
+        <a class="del_url btn btn-outline-light" href="{% url 'kitchen:dishes-delete' pk=dish.id %}">Delete</a>
+      </div>
+    </div>
+
     <div class="title">
-      <h1> {{ dish.name}}  </h1>
-      <h4> Type: {{ dish.dish_type }}</h4>
+      <h1> {{ dish.name}} ({{ dish.dish_type }}) </h1>
     </div>
 
     {% if dish.description %}
-      <h4>Description :</h4>
-      <p> {{ dish.description }}</p>
+      <h4 style="color: darkolivegreen">Description :</h4>
+      <pre style="color: white"> {{ dish.description }}</pre>
     {% endif %}
     {% if dish.cooks.all %}
-      <h4>List of authors of dishes:</h4>
+      <h4 style="color: darkolivegreen"> Authors of dishes:</h4>
       {% for cook in dish.cooks.all %}
         <ul class="list-group">
           <li class="list-group">
-            <p> {{ cook.username }} </p>
+            <a href={% url 'kitchen:cook-detail' cook.id %} style="color:white"> {{ cook.first_name }} {{ cook.last_name }} </a>
           </li>
         </ul>
       {% endfor %}
     {% endif %}
-
-  </div>
 
 {% endblock %}
