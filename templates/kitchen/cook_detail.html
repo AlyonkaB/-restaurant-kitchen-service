@@ -4,12 +4,16 @@
 {% block content %}
 
   <div class="content-detail">
-    <div style="float: left">
-      <h2>
-        <a style="color: white" href="{% url 'kitchen:cook-update' pk=cook.id %}">Update</a>
-        <a style="color: red" href="{% url 'kitchen:cook-delete' pk=cook.id %}">Delete</a>
-      </h2>
-   </div>
+    <div class="content-detail">
+    <div>
+      <div style="float: left">
+        <a class="upd_url btn btn-outline-light" href="{% url 'kitchen:cook-update' pk=cook.id %}">Update</a>
+      </div>
+
+      <div style="float: right">
+        <a class="del_url btn btn-outline-light" href="{% url 'kitchen:cook-delete' pk=cook.id %}">Delete</a>
+      </div>
+    </div>
     <div class="title">
       <h1> {{ cook.first_name}} {{ cook.last_name }} </h1>
       <h4> User name: {{ cook.username }}</h4>
@@ -22,11 +26,11 @@
       <p>Year for experience : {{ cook.years_for_experience }}</p>
     {% endif %}
     {% if cook.dishes.all %}
-      <h4>List of dishes from the chef:</h4>
+      <h4 style="color: darkolivegreen">List of dishes from the chef:</h4>
       {% for dish in cook.dishes.all %}
         <ul class="list-group">
           <li class="list-group">
-            <p> {{ dish.name }} </p>
+            <a href={% url 'kitchen:dish-detail' dish.id %} style="color:white"> {{ dish.name }} </a>
           </li>
         </ul>
       {% endfor %}
