@@ -1,0 +1,107 @@
+@font-face {
+    font-family: Gagalin;
+    src: url(fonts/Gagalin.ttf);
+}
+@font-face {
+    font-family: Gunnyrewritten;
+    src: url(fonts/gunnyrewritten.ttf);
+}
+
+body {
+    background-image: url(images/image_list_backgraund.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+a {
+    color: dimgrey;
+}
+
+a:hover {
+    color: black;
+}
+
+.upd_url{
+    color: darkolivegreen;
+}
+
+.del_url{
+    color: gray;
+}
+
+.nav-item {
+    margin: 10px;
+}
+
+.nav{
+    display: inline;
+}
+
+.title {
+    color: brown;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: "Gagalin", serif;
+    font-size: 60px;
+}
+
+.btn {
+    font-family: "Arial Black", serif;
+    font-size: 15px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-family: "Arial Black", serif;
+}
+
+.card-text {
+    font-family: Arial, sans-serif
+}
+
+.content-list{
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px 200px 30px 200px;
+    text-align: center;
+    height: 100%;
+    font-family: Gunnyrewritten;
+    font-size: 30px;
+}
+
+.content-detail{
+    text-align: center;
+    color: white;
+    height: 100%;
+    padding: 30px 150px 30px 150px;
+}
+
+.content-created{
+    text-align: center;
+    color: white;
+    height: 100vh;
+}
+
+.login{
+    margin: 50px auto;
+    background-color: rgba(85, 107, 47, 0.27);
+    width:360px;
+    height:350px;
+    padding: 35px;
+    border: 5px;
+    border-radius: 10px;
+    line-height: 30px;
+    font-weight: bolder;
+    font-family: Gunnyrewritten;
+    font-size: 27px;
+    color:  brown;
+    text-align: center;
+}
+
+.username{
+    font-family: "Gagalin", serif;
+    color: brown;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin-top: 20px;
+}

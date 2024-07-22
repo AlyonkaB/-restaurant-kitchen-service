@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+  <div class="content-list">
+    <div >
+      <div style="float: left">
+        <a href="{% url 'kitchen:cook-create' %}" class="btn btn-outline-light">
+          ➕
+        </a>
+      </div>
+
+      <div style="float: right">
+        <form method="get" action="" style="font-size: 20px" class="form-inline">
+          {{ search_form }}
+          <input class="btn btn-outline-light" type="submit" value="🔎">
+        </form>
+      </div>
+    </div>
+
+    <div class="title">
+      <h1> List cooks </h1>
+    </div>
+
+    <table class="table">
+      <tr style="color: brown">
+        <th>Name</th>
+        <th>Login</th>
+        <th>Email</th>
+      </tr>
+      {% for cook in cook_list %}
+        <tr style="color:darkolivegreen">
+          <td>
+            <a href={% url 'kitchen:cook-detail' cook.id %} style="color:white"> {{ cook.first_name }} {{ cook.last_name }} </a>
+          </td>
+          <td>{{ cook.username }}</td>
+          <td>{{ cook.email }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+{% endblock %}

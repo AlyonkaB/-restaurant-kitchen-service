@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="content-list">
+    <div>
+      <div style="float: left">
+        <a href="{% url 'kitchen:dishes-create' %}" class="btn btn-outline-light">
+          ➕
+        </a>
+      </div>
+
+      <div style="float: right">
+        <form method="get" action="" style="font-size: 20px" class="form-inline">
+          {{ search_form }}
+          <input class="btn btn-outline-light" type="submit" value="🔎">
+        </form>
+      </div>
+    </div>
+
+    <div class="title">
+      <h1> List dishes </h1>
+    </div>
+    <table class="table">
+      <tr style="color: brown">
+        <th>Name</th>
+        <th>Dish type</th>
+        <th>Ingredients</th>
+        <th>Prise</th>
+      </tr>
+      {% for dish in dish_list %}
+        <tr style="color:darkolivegreen">
+          <td>
+            <a href={% url 'kitchen:dish-detail' dish.id %} style="color:white"> {{ dish.name }} </a>
+          </td>
+          <td>
+            {{ dish.dish_type.name }}
+          </td>
+          <td>
+            {% for ingredient in dish.ingredients.all %}
+              {{ ingredient.name }},
+            {% endfor %}  
+          </td>
+          <td>
+            {{ dish.price }}
+          </td>
+        </tr>
+
+      {% endfor %}
+    </table>
+  </div>
+
+{% endblock %}

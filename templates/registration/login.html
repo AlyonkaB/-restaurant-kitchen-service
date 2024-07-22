@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="title">
+      <h1> Welcome to the kitchen </h1>
+  </div>
+  <div class="login">
+    <form action="", method="post">
+    {% csrf_token %}
+      {{ form.as_p }}
+      <input class="btn btn-dark btn-lg" type="submit" value="Submit">
+      <input type="hidden" name="next" value={{ next }}>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="content-list">
+    <div>
+      <div style="float: left">
+        <a href="{% url 'kitchen:dishes-type-create' %}" class="btn btn-outline-light">
+          ➕
+        </a>
+      </div>
+
+      <div style="float: right">
+        <form method="get" action="" style="font-size: 20px" class="form-inline">
+          {{ search_form }}
+          <input class="btn btn-outline-light" type="submit" value="🔎">
+        </form>
+      </div>
+    </div>
+
+    <div class="title">
+      <h1> List dish types </h1>
+    </div>
+
+    <table class="table">
+      <tr style="color: brown">
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      {% for type in dish_type_list %}
+        <tr style="color:darkolivegreen">
+          <td style="color: white">
+            {{ type.name }}
+          </td>
+          <td>
+            <a class="upd_url" href="{% url 'kitchen:dishes-type-update' pk=type.id %}">Update</a>
+          </td>
+          <td>
+            <a class="del_url" href="{% url 'kitchen:dishes-type-delete' pk=type.id %}">Delete</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+{% endblock %}
