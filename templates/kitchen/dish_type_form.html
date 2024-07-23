@@ -2,15 +2,22 @@
 
 
 {% block content %}
-  <div class="content-created">
-   <div title>
-    <h1>{{ object|yesno:"Update,Create" }} dish type</h1>
-   </div>
-    <form action="" method="post" novalidate>
-      {% csrf_token %}
-      {{ form }}
+ 
+    <div>
+    
+      <div title class="title">
+        <h1>{{ object|yesno:"Update,Create" }} dish type</h1>
+      </div>
+      
+      <div class="content-created">
+        <form action="" method="post" novalidate>
+          {% csrf_token %}
+          {{ form.as_p }}
 
-      <input type="submit" value="Submit" class="btn btn-secondary">
-    </form>
-  </div>
+         <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+      </div>
+    
+    </div>
+  
 {% endblock %}
