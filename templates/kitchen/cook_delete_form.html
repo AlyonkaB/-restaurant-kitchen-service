@@ -1,8 +1,20 @@
+{% extends "base.html" %}
 {% block content %}
-  <h1>Delete cook {{ dish.name }}?</h1>
-  <form action="" method="post">
-    {% csrf_token %}
 
-    <input type="submit" value="Yes" class="btn btn-danger">
-  </form>
+  <div>
+    
+      <div title class="title">
+        <h1>Delete cook {{ dish.name }}?</h1>
+      </div>
+      
+      <div class="content-created">
+        <form action="" method="post">
+          {% csrf_token %}
+         
+
+        <input type="submit" value="Yes" class="btn btn-danger">
+        </form>
+      </div>
+    
+    </div>
 {% endblock %}

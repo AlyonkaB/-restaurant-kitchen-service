@@ -89,6 +89,18 @@ a:hover {
     font-size: 25px;
 }
 
+.content-delete{
+    text-align: center;
+    height: auto;
+    width: 250px;
+    background-color: rgba(161, 67, 67, 0.27);
+    border-radius:100px;
+    margin:  auto;
+    padding: 75px;
+    font-family: Gunnyrewritten;
+    font-size: 25px;
+}
+
 .login{
     margin: 50px auto;
     background-color: rgba(85, 107, 47, 0.27);
