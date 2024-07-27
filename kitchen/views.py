@@ -45,7 +45,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
 
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
-
+    queryset = Cook.objects.all().prefetch_related("dishes")
 
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
@@ -68,7 +68,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
-
+    queryset = Dish.objects.all().prefetch_related("cooks")
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
