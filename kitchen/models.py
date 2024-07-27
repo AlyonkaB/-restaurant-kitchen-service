@@ -20,8 +20,10 @@ class Cook(AbstractUser):
         verbose_name_plural = "cooks"
 
     def __str__(self):
-        return (f"{self.username}: {self.first_name} {self.last_name} "
-                f"({self.years_for_experience} years for experience)")
+        return (
+            f"{self.username}: {self.first_name} {self.last_name} "
+            f"({self.years_for_experience} years for experience)"
+        )
 
 
 class Ingredient(models.Model):
