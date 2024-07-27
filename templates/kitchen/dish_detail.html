@@ -3,19 +3,23 @@
 
 
 {% block content %}
-
+  {{ dish.cooks }}
   <div class="content-detail">
-    <div>
-      <div style="float: left">
-        <a class="upd_url btn btn-outline-light" href="{% url 'kitchen:dishes-update' pk=dish.id %}">Update</a>
+  {% for cook in dish.cooks.all %}  
+    {% if user.username in cook.username %}
+      <div>
+        <div style="float: left">
+          <a class="upd_url btn btn-outline-light" href="{% url 'kitchen:dishes-update' pk=dish.id %}">Update</a>
+        </div>
+  
+        <div style="float: right">
+          <a class="del_url btn btn-outline-light" href="{% url 'kitchen:dishes-delete' pk=dish.id %}">Delete</a>
+        </div>
       </div>
+    {% endif %}
+  {% endfor %}
 
-      <div style="float: right">
-        <a class="del_url btn btn-outline-light" href="{% url 'kitchen:dishes-delete' pk=dish.id %}">Delete</a>
-      </div>
-    </div>
-
-    <div class="title">
+    <div class="title-red">
       <h1> {{ dish.name}} ({{ dish.dish_type }}) </h1>
     </div>
 
