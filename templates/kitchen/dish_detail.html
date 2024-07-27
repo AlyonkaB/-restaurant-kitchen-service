@@ -6,7 +6,7 @@
   {{ dish.cooks }}
   <div class="content-detail">
   {% for cook in dish.cooks.all %}  
-    {% if user.username in cook.username %}
+    {% if user.username in cook.username or user.is_staff %}
       <div>
         <div style="float: left">
           <a class="upd_url btn btn-outline-light" href="{% url 'kitchen:dishes-update' pk=dish.id %}">Update</a>

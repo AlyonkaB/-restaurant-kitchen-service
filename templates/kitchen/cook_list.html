@@ -5,13 +5,14 @@
 {% block content %}
 
   <div class="content-list">
-    <div >
-      <div style="float: left">
-        <a href="{% url 'kitchen:cook-create' %}" class="btn btn-outline-light">
-          ➕
+    <div>
+      {% if user.is_staff %}
+        <div style="float: left">
+          <a href="{% url 'kitchen:cook-create' %}" class="btn btn-outline-light">
+            ➕
         </a>
       </div>
-
+      {% endif %}
       <div style="float: right">
         <form method="get" action="" style="font-size: 20px" class="form-inline">
           {{ search_form }}
