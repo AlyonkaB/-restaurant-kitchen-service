@@ -4,10 +4,14 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
 
-from kitchen.forms import DishCreateForm, CookCreationForm, CookUpdateForm, \
-    SearchDishIngredientDishTypeForm, SearchCookForm
+from kitchen.forms import (
+    DishCreateForm,
+    CookCreationForm,
+    CookUpdateForm,
+    SearchDishIngredientDishTypeForm,
+    SearchCookForm,
+)
 from kitchen.models import Cook, Dish, DishType, Ingredient
-
 
 
 def index(request: HttpRequest) -> HttpResponse:
@@ -19,7 +23,7 @@ def index(request: HttpRequest) -> HttpResponse:
         "cooks": cooks,
         "dish": dish,
         "diss_type": diss_type,
-        "ingredient": ingredient
+        "ingredient": ingredient,
     }
     return render(request, "kitchen/index.html", context=context)
 
@@ -39,19 +43,28 @@ class CookListView(LoginRequiredMixin, generic.ListView):
         queryset = Cook.objects.all()
         form = SearchCookForm(self.request.GET)
         if form.is_valid():
-            return queryset.filter(username__icontains=form.cleaned_data["username"])
-            return queryset
+            return queryset.filter(
+                username__icontains=form.cleaned_data["username"]
+            )
+        return queryset
 
 
 class CookDetailView(LoginRequiredMixin, generic.DetailView):
     model = Cook
     queryset = Cook.objects.all().prefetch_related("dishes")
 
+
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
     context_object_name = "dish_list"
     template_name = "kitchen/dish_list.html"
-    queryset = Dish.objects.all().prefetch_related("ingredients").select_related("dish_type")
+    queryset = (
+        Dish.objects.all().prefetch_related(
+            "ingredients"
+        ).select_related(
+            "dish_type"
+        )
+    )
     paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -69,6 +82,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
 class DishDetailView(LoginRequiredMixin, generic.DetailView):
     model = Dish
     queryset = Dish.objects.all().prefetch_related("cooks")
+
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
