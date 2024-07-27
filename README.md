@@ -8,9 +8,11 @@ You will have access to the list of cooks, dishes,
 types of dishes and ingredients only by logging in to the website.
 
 DB structure:
-![img.png](img.png)
+
+![img_2.png](img_2.png)
 
 Page login:
+
 ![img_1.png](img_1.png)
 
 
