@@ -3,11 +3,11 @@
 
   <div>
     
-      <div title class="title">
-        <h1>Delete cook {{ dish.name }}?</h1>
+      <div title class="title-red">
+        <h1>Delete cook {{ cook.first_name }} {{ cook.last_name }}?</h1>
       </div>
-      
-      <div class="content-created">
+       
+      <div class="content-delete">
         <form action="" method="post">
           {% csrf_token %}
          
