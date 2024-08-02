@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
 
 
@@ -6,7 +6,7 @@
   {{ dish.cooks }}
   <div class="content-detail">
   {% for cook in dish.cooks.all %}  
-    {% if user.username in cook.username or user.is_staff %}
+    {% if user.username in cook.username %}
       <div>
         <div style="float: left">
           <a class="upd_url btn btn-outline-light" href="{% url 'kitchen:dishes-update' pk=dish.id %}">Update</a>
