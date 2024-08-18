@@ -1,4 +1,29 @@
 # Restaurant kitchen service
+
+DJANGO project of the system for managing the preparation of dishes, dish types, ingredients and cooks.
+
+## Check it out!
+
+[Restaurant kitchen service Deploying Render ](https://restaurant-kitchen-service.render.com/)
+
+## Installation
+
+```shell
+git clone https://github.com/AlyonkaB/-restaurant-kitchen-service.git
+cd restaurant-kitchen-service/
+python -m venv venv
+source venv/scripts/activate
+pip install -r requirements.txt
+python manage.py runserver
+```
+
+## Features
+
+- Authentication functionality for Cook/User
+- Managing Dishes, Dish types and Ingredients directly from website interface
+- Powerful admin panel for advanced managing
+
+## Demo
 This site is a project structure for a kitchen with a list of chefs and their dishes.
 
 You will have access to the list of cooks, dishes, 
