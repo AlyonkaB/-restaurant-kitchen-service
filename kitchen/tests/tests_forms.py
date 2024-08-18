@@ -18,4 +18,3 @@ class FormTests(TestCase):
         form = CookCreationForm(data=test_data)
         self.assertTrue(form.is_valid())
         self.assertEqual(form.cleaned_data, test_data)
-
