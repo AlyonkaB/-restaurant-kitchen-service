@@ -6,6 +6,8 @@ dj-database-url==2.2.0
 Django==5.0.7
 django-debug-toolbar==4.4.6
 flake8==7.1.0
+gunicorn==23.0.0
+h11==0.14.0
 mccabe==0.7.0
 mypy-extensions==1.0.0
 packaging==24.1
@@ -17,4 +19,5 @@ pyflakes==3.2.0
 sqlparse==0.5.1
 typing_extensions==4.12.2
 tzdata==2024.1
+uvicorn==0.30.6
 whitenoise==6.7.0
