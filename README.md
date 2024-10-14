@@ -5,6 +5,8 @@ DJANGO project of the system for managing the preparation of dishes, dish types,
 ## Check it out!
 
 [Restaurant kitchen service Deploying Render ](https://restaurant-kitchen-service-awik.onrender.com)
+User: Admin
+Password: Pass123Pass
 
 ## Installation
 
@@ -45,6 +47,8 @@ Page login:
 
 Only the Administrator can register, if you already have a login and password, 
 click the login button on the top right
+User: Admin
+Password: Pass123Pass
 
 ![img_1.png](img/img_1.png)
 
